@@ -29,6 +29,8 @@ Manually matching internal purchase records with supplier tax invoices consumes 
                  Console audit summary
 ```
 
+The optional browser dashboard uses the same reconciliation functions and renders summary cards plus separate transaction tables for each category.
+
 ## Requirements
 
 - Python 3.10 or newer
@@ -71,6 +73,18 @@ Value Mismatch             1
 ```
 
 Exit code is `0` for a completed audit and `2` for invalid or unreadable input.
+
+## Browser dashboard
+
+Start the local dashboard with Python's built-in HTTP server:
+
+```bash
+python dashboard.py
+```
+
+Open <http://127.0.0.1:8000/>. The dashboard supports drag-and-drop or file selection for a CSV purchase ledger and CSV/JSON vendor return. Leave either input untouched to use its sample dataset. **Run Reconciliation Audit** sends the files to the local server and updates the results without reloading the page. Search filters all three tables by GSTIN or invoice number; **Export Audit Report (CSV)** downloads the current audit rows. Uploads are limited to 10 MB per file.
+
+The service binds to localhost by default. Use `python dashboard.py --port 8080` to select another port, and stop it with `Ctrl+C`.
 
 ## Business impact and CSBS alignment
 
