@@ -1,0 +1,6 @@
+[
+  {"gstin": "29ABCDE1234F1Z5", "invoice_number": "INV-1001", "taxable_value": "10000.00", "tax_amount": "1800.50"},
+  {"gstin": "29ABCDE1234F1Z5", "invoice_number": "INV-1002", "taxable_value": "25002.00", "tax_amount": "4500.00"},
+  {"gstin": "27PQRSX5678L1Z2", "invoice_number": "INV-2001", "taxable_value": "7500.00", "tax_amount": "1350.00"},
+  {"gstin": "33UVWXY9876D1Z3", "invoice_number": "INV-4001", "taxable_value": "6000.00", "tax_amount": "1080.00"}
+]
