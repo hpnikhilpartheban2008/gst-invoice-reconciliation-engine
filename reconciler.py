@@ -31,6 +31,12 @@ class Invoice:
     invoice_number: str
     taxable_value: Decimal
     tax_amount: Decimal
+    supplier_name: str = ""
+    description: str = ""
+    gst_rate: Decimal = Decimal("0.00")
+    cgst: Decimal = Decimal("0.00")
+    sgst: Decimal = Decimal("0.00")
+    igst: Decimal = Decimal("0.00")
 
     @property
     def key(self) -> tuple[str, str]:
@@ -78,6 +84,12 @@ def _record_to_invoice(record: object, row_number: int) -> Invoice:
         invoice_number=invoice_number,
         taxable_value=_decimal(record["taxable_value"], "taxable_value", row_number),
         tax_amount=_decimal(record["tax_amount"], "tax_amount", row_number),
+        supplier_name=str(record.get("supplier_name", "")).strip(),
+        description=str(record.get("description", "")).strip(),
+        gst_rate=_decimal(record.get("gst_rate", "0"), "gst_rate", row_number),
+        cgst=_decimal(record.get("cgst", "0"), "cgst", row_number),
+        sgst=_decimal(record.get("sgst", "0"), "sgst", row_number),
+        igst=_decimal(record.get("igst", "0"), "igst", row_number),
     )
 
 

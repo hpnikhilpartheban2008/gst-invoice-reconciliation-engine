@@ -1,6 +1,18 @@
-[
-  {"gstin": "29ABCDE1234F1Z5", "invoice_number": "INV-1001", "taxable_value": "10000.00", "tax_amount": "1800.50"},
-  {"gstin": "29ABCDE1234F1Z5", "invoice_number": "INV-1002", "taxable_value": "25002.00", "tax_amount": "4500.00"},
-  {"gstin": "27PQRSX5678L1Z2", "invoice_number": "INV-2001", "taxable_value": "7500.00", "tax_amount": "1350.00"},
-  {"gstin": "33UVWXY9876D1Z3", "invoice_number": "INV-4001", "taxable_value": "6000.00", "tax_amount": "1080.00"}
-]
+{
+  "financial_year": "2026-27",
+  "return_period": "Q3",
+  "records": [
+    {"supplier_name":"Lakshmi Machine Works","gstin":"33AAAAC1234F1Z1","invoice_number":"LMW-2627-001","description":"CNC spindle tooling package","taxable_value":"345000.00","gst_rate":"18","cgst":"31050.00","sgst":"31050.00","igst":"0.00","tax_amount":"62100.00"},
+    {"supplier_name":"Lakshmi Machine Works","gstin":"33AAAAC1234F1Z1","invoice_number":"LMW-2627-002","description":"Carbide insert indexable tooling","taxable_value":"18500.00","gst_rate":"18","cgst":"1665.00","sgst":"1665.00","igst":"0.00","tax_amount":"3330.00"},
+    {"supplier_name":"Lakshmi Machine Works","gstin":"33AAAAC1234F1Z1","invoice_number":"LMW-2627-003","description":"Precision tool holder assemblies","taxable_value":"87500.00","gst_rate":"18","cgst":"7875.00","sgst":"7875.00","igst":"0.00","tax_amount":"15750.00"},
+    {"supplier_name":"Roots Industries","gstin":"33AABCR5678K1Z5","invoice_number":"ROOT-2627-014","description":"Industrial drive motor assemblies","taxable_value":"225000.00","gst_rate":"18","cgst":"20250.00","sgst":"20250.00","igst":"0.00","tax_amount":"40500.00"},
+    {"supplier_name":"Roots Industries","gstin":"33AABCR5678K1Z5","invoice_number":"ROOT-2627-018","description":"CNC enclosure safety interlocks","taxable_value":"44000.00","gst_rate":"18","cgst":"3960.00","sgst":"3960.00","igst":"0.00","tax_amount":"7920.00"},
+    {"supplier_name":"Roots Industries","gstin":"33AABCR5678K1Z5","invoice_number":"ROOT-2627-021","description":"Precision coolant filtration unit","taxable_value":"112500.00","gst_rate":"18","cgst":"10125.00","sgst":"10125.00","igst":"0.00","tax_amount":"20250.00"},
+    {"supplier_name":"Premier Precision Tooling","gstin":"29AAACP9012L1ZV","invoice_number":"PPT-2627-038","description":"CNC carbide reamer set","taxable_value":"185000.00","gst_rate":"18","cgst":"16650.00","sgst":"16650.00","igst":"0.00","tax_amount":"33300.00"},
+    {"supplier_name":"Premier Precision Tooling","gstin":"29AAACP9012L1ZV","invoice_number":"PPT-2627-041","description":"Progressive die tooling components","taxable_value":"72000.00","gst_rate":"18","cgst":"6480.00","sgst":"6480.00","igst":"0.00","tax_amount":"12960.00"},
+    {"supplier_name":"Bharat Forge Dist","gstin":"27AAABF3456M1ZO","invoice_number":"BFD-2627-007","description":"Hot forging die inserts","taxable_value":"340000.00","gst_rate":"28","cgst":"47600.30","sgst":"47600.30","igst":"0.00","tax_amount":"95200.60"},
+    {"supplier_name":"Bharat Forge Dist","gstin":"27AAABF3456M1ZO","invoice_number":"BFD-2627-011","description":"Heavy duty press tooling blocks","taxable_value":"275000.00","gst_rate":"28","cgst":"38500.20","sgst":"38500.20","igst":"0.00","tax_amount":"77000.40"},
+    {"supplier_name":"Bharat Forge Dist","gstin":"27AAABF3456M1ZO","invoice_number":"BFD-2627-016","description":"Closed-die forging tool set","taxable_value":"268000.00","gst_rate":"28","cgst":"37520.00","sgst":"37520.00","igst":"0.00","tax_amount":"75040.00"},
+    {"supplier_name":"Lakshmi Machine Works","gstin":"33AAAAC1234F1Z1","invoice_number":"LMW-2627-00O","description":"Carbide boring bar and insert kit","taxable_value":"52500.00","gst_rate":"18","cgst":"4725.00","sgst":"4725.00","igst":"0.00","tax_amount":"9450.00"}
+  ]
+}

@@ -5,7 +5,7 @@ from decimal import Decimal
 from pathlib import Path
 
 from reconciler import Invoice, ReconciliationInputError, load_records, reconcile
-from dashboard import _read_upload
+from dashboard import _read_upload, default_payload
 
 
 def invoice(gstin, number, taxable, tax):
@@ -42,6 +42,13 @@ class ReconciliationTests(unittest.TestCase):
     def test_dashboard_accepts_wrapped_json_upload(self):
         payload = b'{"financial_year":"2025-26","records":[{"gstin":"AA","invoice_number":"1","taxable_value":"1.25","tax_amount":"0.23"}]}'
         self.assertEqual(_read_upload(payload, "returns.json")[0].gstin, "AA")
+
+    def test_production_dataset_has_requested_exception_balance(self):
+        payload = default_payload()
+        self.assertEqual(payload["purchase_count"], 12)
+        self.assertEqual(payload["counts"], {
+            "Matched": 10, "Missing in Return": 1, "Value Mismatch": 1,
+        })
 
     def test_rejects_duplicate_keys(self):
         with tempfile.TemporaryDirectory() as directory:

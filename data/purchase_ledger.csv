@@ -1,5 +1,13 @@
-gstin,invoice_number,taxable_value,tax_amount
-29ABCDE1234F1Z5,INV-1001,10000.00,1800.00
-29ABCDE1234F1Z5,INV-1002,25000.00,4500.00
-27PQRSX5678L1Z2,INV-2001,7500.00,1350.00
-07LMNOP4321Q1Z8,INV-3001,12000.00,2160.00
+supplier_name,gstin,invoice_number,description,taxable_value,gst_rate,cgst,sgst,igst,tax_amount
+Lakshmi Machine Works,33AAAAC1234F1Z1,LMW-2627-001,CNC spindle tooling package,345000.00,18,31050.00,31050.00,0.00,62100.00
+Lakshmi Machine Works,33AAAAC1234F1Z1,LMW-2627-002,Carbide insert indexable tooling,18500.00,18,1665.00,1665.00,0.00,3330.00
+Lakshmi Machine Works,33AAAAC1234F1Z1,LMW-2627-003,Precision tool holder assemblies,87500.00,18,7875.00,7875.00,0.00,15750.00
+Roots Industries,33AABCR5678K1Z5,ROOT-2627-014,Industrial drive motor assemblies,225000.00,18,20250.00,20250.00,0.00,40500.00
+Roots Industries,33AABCR5678K1Z5,ROOT-2627-018,CNC enclosure safety interlocks,44000.00,18,3960.00,3960.00,0.00,7920.00
+Roots Industries,33AABCR5678K1Z5,ROOT-2627-021,Precision coolant filtration unit,112500.00,18,10125.00,10125.00,0.00,20250.00
+Premier Precision Tooling,29AAACP9012L1ZV,PPT-2627-038,CNC carbide reamer set,185000.00,18,16650.00,16650.00,0.00,33300.00
+Premier Precision Tooling,29AAACP9012L1ZV,PPT-2627-041,Progressive die tooling components,72000.00,18,6480.00,6480.00,0.00,12960.00
+Bharat Forge Dist,27AAABF3456M1ZO,BFD-2627-007,Hot forging die inserts,340000.00,28,47600.00,47600.00,0.00,95200.00
+Bharat Forge Dist,27AAABF3456M1ZO,BFD-2627-011,Heavy duty press tooling blocks,275000.00,28,38500.00,38500.00,0.00,77000.00
+Bharat Forge Dist,27AAABF3456M1ZO,BFD-2627-016,Closed-die forging tool set,265000.00,28,37100.00,37100.00,0.00,74200.00
+Lakshmi Machine Works,33AAAAC1234F1Z1,LMW-2627-009,Carbide boring bar and insert kit,52500.00,18,4725.00,4725.00,0.00,9450.00
