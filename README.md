@@ -86,9 +86,9 @@ Open <http://127.0.0.1:8000/>. The dashboard supports drag-and-drop or file sele
 
 The service binds to localhost by default. Use `python dashboard.py --port 8080` to select another port, and stop it with `Ctrl+C`.
 
-## Business impact and CSBS alignment
+## Business impact 
 
-For CSBS-oriented finance, compliance, and technology work, the project demonstrates a controlled data pipeline: structured ingestion, deterministic business rules, exception reporting, and repeatable testing. Automating first-pass comparisons can reduce spreadsheet handling and review time, improve traceability of discrepancies, and help teams prioritize supplier follow-up. Any recovered time or ITC benefit depends on input quality, review controls, applicable tax rules, and the enterprise's filing process; the sample data is illustrative only.
+For finance, compliance, and technology work, the project demonstrates a controlled data pipeline: structured ingestion, deterministic business rules, exception reporting, and repeatable testing. Automating first-pass comparisons can reduce spreadsheet handling and review time, improve traceability of discrepancies, and help teams prioritize supplier follow-up. Any recovered time or ITC benefit depends on input quality, review controls, applicable tax rules, and the enterprise's filing process; the sample data is illustrative only.
 
 ## Repository layout
 
