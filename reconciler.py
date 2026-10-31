@@ -91,8 +91,12 @@ def load_records(path: str | Path) -> list[Invoice]:
         if suffix == ".json":
             with source.open("r", encoding="utf-8") as stream:
                 payload = json.load(stream)
+            if isinstance(payload, dict) and "records" in payload:
+                payload = payload["records"]
             if not isinstance(payload, list):
-                raise ReconciliationInputError(f"{source}: JSON root must be an array of records")
+                raise ReconciliationInputError(
+                    f"{source}: JSON root must be an array or an object containing a 'records' array"
+                )
             rows: Iterable[object] = payload
         elif suffix == ".csv":
             with source.open("r", encoding="utf-8-sig", newline="") as stream:
@@ -119,7 +123,11 @@ def load_records(path: str | Path) -> list[Invoice]:
     return invoices
 
 
-def reconcile(purchases: Sequence[Invoice], returns: Sequence[Invoice]) -> list[ReconciliationResult]:
+def reconcile(
+    purchases: Sequence[Invoice],
+    returns: Sequence[Invoice],
+    tolerance: Decimal = TOLERANCE,
+) -> list[ReconciliationResult]:
     """Classify each purchase as Matched, Missing in Return, or Value Mismatch."""
     return_by_key = {invoice.key: invoice for invoice in returns}
     results: list[ReconciliationResult] = []
@@ -133,7 +141,7 @@ def reconcile(purchases: Sequence[Invoice], returns: Sequence[Invoice]) -> list[
             continue
         taxable_difference = abs(purchase.taxable_value - vendor.taxable_value)
         tax_difference = abs(purchase.tax_amount - vendor.tax_amount)
-        if taxable_difference > TOLERANCE or tax_difference > TOLERANCE:
+        if taxable_difference > tolerance or tax_difference > tolerance:
             results.append(ReconciliationResult(
                 "Value Mismatch", purchase.gstin, purchase.invoice_number,
                 taxable_difference, tax_difference,
@@ -143,7 +151,7 @@ def reconcile(purchases: Sequence[Invoice], returns: Sequence[Invoice]) -> list[
             results.append(ReconciliationResult(
                 "Matched", purchase.gstin, purchase.invoice_number,
                 taxable_difference, tax_difference,
-                "Amounts are within INR 1.00 tolerance",
+                f"Amounts are within INR {tolerance:.2f} tolerance",
             ))
     return results
 

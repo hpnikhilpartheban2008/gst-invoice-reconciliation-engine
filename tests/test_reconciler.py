@@ -5,6 +5,7 @@ from decimal import Decimal
 from pathlib import Path
 
 from reconciler import Invoice, ReconciliationInputError, load_records, reconcile
+from dashboard import _read_upload
 
 
 def invoice(gstin, number, taxable, tax):
@@ -29,6 +30,18 @@ class ReconciliationTests(unittest.TestCase):
             path = Path(directory) / "records.json"
             path.write_text(json.dumps([{"gstin": "AA", "invoice_number": "1", "taxable_value": "1.25", "tax_amount": "0.23"}]))
             self.assertEqual(load_records(path)[0].tax_amount, Decimal("0.23"))
+
+    def test_loads_json_object_with_records_array(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "records.json"
+            path.write_text(json.dumps({"financial_year": "2025-26", "records": [
+                {"gstin": "AA", "invoice_number": "1", "taxable_value": "1.25", "tax_amount": "0.23"}
+            ]}))
+            self.assertEqual(load_records(path)[0].invoice_number, "1")
+
+    def test_dashboard_accepts_wrapped_json_upload(self):
+        payload = b'{"financial_year":"2025-26","records":[{"gstin":"AA","invoice_number":"1","taxable_value":"1.25","tax_amount":"0.23"}]}'
+        self.assertEqual(_read_upload(payload, "returns.json")[0].gstin, "AA")
 
     def test_rejects_duplicate_keys(self):
         with tempfile.TemporaryDirectory() as directory:
